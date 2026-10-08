@@ -21,23 +21,51 @@ if package == "A":
             additional_minutes = minutes - 450
             additional_charge =  additional_minutes * 0.45
             total = monthly_charge + additional_charge
+            print("Monthly Bill")
+            print("Selected package: ", package)
+            print("Minutes used: ", minutes)
+            print(f"Monthly charge: ${monthly_charge:.2f}")
+            print("Additional minutes used: ", additional_minutes)
+            print(f"Additional minutes charge:  ${additional_charge:.2f}")
+            print(f"Total amount due: ${total:.2f}")
+    else:
+        total = monthly_charge
+        print("Monthly Bill")
+        print(f"Total amount due: ${total:.2f}")
+        print("Selected package: ", package)
+        print("Minutes used: ", minutes)
+        print(f"Monthly charge: ${monthly_charge:.2f}")
+
 elif package == "B":
     monthly_charge = float(59.99)
 
     if minutes > 900:
             additional_minutes = minutes - 900
-            additional_charge = additional_minutes * 0.10
+            additional_charge = additional_minutes * 0.40
             total = monthly_charge + additional_charge
+            print("Monthly Bill")
+            print(f"Total amount due: ${total:.2f}")
+            print("Selected package: ", package)
+            print("Minutes used: ", minutes)
+            print(f"Monthly charge: ${monthly_charge:.2f}")
+            print("Additional minutes used: ", additional_minutes)
+            print(f"Additional minutes charge:  ${additional_charge:.2f}")
+    else:
+        total = monthly_charge
+        print("Monthly Bill")
+        print(f"Total amount due: ${total:.2f}")
+        print("Selected package: ", package)
+        print("Minutes used: ", minutes)
+        print(f"Monthly charge: ${monthly_charge:.2f}")
+
 elif package == "C":
     monthly_charge = float(69.99)
     total = monthly_charge
+    print("Monthly Bill")
+    print(f"Total amount due: ${total:.2f}")
+    print("Selected package: ", package)
+    print("Minutes used: ", minutes)
+    print(f"Monthly charge: ${monthly_charge:.2f}")
+
 else:
     print("Invalid package. Please enter A, B, or C.")
-
-print("Monthly Bill")
-print("Selected package: ", package)
-print("Minutes used: ", minutes)
-print(f"Monthly charge: , ${monthly_charge:.2f}")
-print("Additional minutes used: ", additional_minutes)
-print(f"Additional minutes charge:  ${additional_charge:.2f}")
-print(f"Total amount due: ${total:.2f}")
