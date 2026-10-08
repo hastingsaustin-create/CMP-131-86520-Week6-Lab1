@@ -7,19 +7,37 @@
 print("----------------")
 print("Phone Bill")
 print("----------------")
-A= float(39.99)
-B= float(59.99)
-C= float(69.99)
-plan= (input("Enter phone plan A, B, or C: "))
-minutes= (float(input("Enter number of minutes used: ")))
-if plan== A:
-    if minutes >= 450:
+package= (input("Enter phone plan A, B, or C: ")).upper()
+minutes= (int(input("Enter number of minutes used: ")))
 
+monthly_charge = float(0.0)
+additional_minutes = int(0)
+additional_charge = float(0.0)
 
+if package == "A":
+    monthly_charge = float(39.99)
+    
+    if minutes > 450:
+            additional_minutes = minutes - 450
+            additional_charge =  additional_minutes * 0.45
+            total = monthly_charge + additional_charge
+elif package == "B":
+    monthly_charge = float(59.99)
 
-print("Selected package: ", plan)
+    if minutes > 900:
+            additional_minutes = minutes - 900
+            additional_charge = additional_minutes * 0.10
+            total = monthly_charge + additional_charge
+elif package == "C":
+    monthly_charge = float(69.99)
+    total = monthly_charge
+else:
+    print("Invalid package. Please enter A, B, or C.")
+
+print("Monthly Bill")
+print("Selected package: ", package)
 print("Minutes used: ", minutes)
-print("Monthly charge: ", charge)
-print("Additional minutes used: ")
-print("Additional minutes charge: ")
-print("Total amount due: ")
+print(f"Monthly charge: , ${monthly_charge:.2f}")
+print("Additional minutes used: ", additional_minutes)
+print(f"Additional minutes charge:  ${additional_charge:.2f}")
+print(f"Total amount due: ${total:.2f}")
